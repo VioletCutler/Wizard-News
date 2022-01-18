@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+const { list, find } = require('./postBank')
+
 // const morgan = require("morgan");
 const volleyball = require('volleyball');
 
