@@ -19,7 +19,7 @@ const list = () => {
   // [{id: 1, upvotes: 10, title: 'some title', name: 'Lupin', date: new Date()}]
   return [...data] // Notice that we're returning a copy of the array, so the original data is safe. This is called 'immutability'.
 }; 
-
+console.log(typeof list)
 const find = (id) => {
   const post = data.find(post => post.id === id);
   return {...post}; // Again, we copy the post data before returning so the original information is safe.

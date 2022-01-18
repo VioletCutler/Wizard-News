@@ -6,10 +6,21 @@ const { list, find } = require('./postBank')
 // const morgan = require("morgan");
 const volleyball = require('volleyball');
 
-app.get("/", (req, res) => res.send("Hello World!"));
-
 // app.use(morgan('dev'));
 app.use(volleyball);
+
+app.get("/", (req, res) => {
+  const dataArray = list()
+  const titleAndAuthorArray = dataArray.map((post) => {
+    let title = post.title;
+    let name = post.name;
+    return `${title} by ${name}`
+  })
+  .join(' ')
+  
+  res.send(titleAndAuthorArray)
+
+})
 
 const PORT = 1337;
 
